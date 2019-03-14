@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+
+        let body = document.querySelector("body")//table parent
+        let table = document.createElement("table");//table
+        let tableRow1 = document.createElement("tr");// table row 1
+        let tableRow2 = document.createElement("tr") //second table row
+        let tableHeader1 = document.createElement("th")// table header 1
+        let tableHeader2 = document.createElement("th")//table header 2
+        let tdata1 = document.createElement("td");//data 1
+        let tdata2 = document.createElement("td"); //data 2
+
+//create text for the second row
+        let string1 = document.createTextNode("ESMAD")//text1
+        let string2 = document.createTextNode("Vila do Conde")// text2
+
+
+
+        tdata1.appendChild(string1)
+        tdata2.appendChild(string2)
+
+        //add to the table data 2 row
+        tableRow2.appendChild(tdata1)
+        tableRow2.appendChild(tdata2)
+
+        
+       
+
+
+        //header first row
+
+
+        let string3 = document.createTextNode("Escola")//text1
+        let string4 = document.createTextNode("local")// text2
+
+        tableHeader1.appendChild(string3)
+        tableHeader2.appendChild(string4)
+
+
+        tableRow1.appendChild(tableHeader1)
+        tableRow1.appendChild(tableHeader2)
+
+        table.appendChild(tableRow1)
+        //add the second row to the table
+        table.appendChild(tableRow2)
+        
+        body.appendChild(table)
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

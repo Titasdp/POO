@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="red">Saudações</h1>
+    <p id="p1">Olá Mundo</p>
+    <p id="p2" class="red">Olá Portugal</p>
+    <p id="p3">Olá Vila do Conde</p>
+    <div>Olha uma div</div>
+    <div>Olha uma segunda div com um
+        <span>primeiro span</span>
+    </div>
+    <span>Olha um segundo span</span>
+
+
+
+    <script>
+
+        //a
+        let p2 = document.getElementById("p2");
+        console.log(p2);
+
+
+        //c
+        let allParagrafe = document.querySelectorAll("p")
+        console.log(allParagrafe)
+
+        //d 
+        for (let node of allParagrafe) { console.log(node.innerHTML) }
+
+        //e  
+        let classRed = document.querySelectorAll(".red");
+
+        //f
+        let p3 = document.querySelector("p#p3")
+        console.log(p3);
+
+        //g 
+        let multpElements = document.querySelectorAll("p , div")
+        for (let node of multpElements) { console.log(node) }
+
+
+        //h
+        let spam = document.querySelectorAll("span")
+        for (let node of spam) { console.log(node.innerHTML) }
+
+        //i
+        let spamInsideDiv = document.querySelector("div>span")
+        console.log(spamInsideDiv);
+
+        //j
+        let spamOutSideDiv = document.querySelector("body>spam")
+        console.log(spamOutSideDiv);
+
+
+        
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
