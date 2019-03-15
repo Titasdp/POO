@@ -13,10 +13,17 @@
 
 
 
+
+
+
     <script>
 
-        let body = document.querySelector("body")//table parent
-        let table = document.createElement("table");//table
+
+
+        let body = document.querySelector("body")//
+        //A
+
+       /*  let table = document.createElement("table");//table
         let tableRow1 = document.createElement("tr");// table row 1
         let tableRow2 = document.createElement("tr") //second table row
         let tableHeader1 = document.createElement("th")// table header 1
@@ -24,7 +31,8 @@
         let tdata1 = document.createElement("td");//data 1
         let tdata2 = document.createElement("td"); //data 2
 
-//create text for the second row
+
+        //create text for the second row
         let string1 = document.createTextNode("ESMAD")//text1
         let string2 = document.createTextNode("Vila do Conde")// text2
 
@@ -37,13 +45,11 @@
         tableRow2.appendChild(tdata1)
         tableRow2.appendChild(tdata2)
 
-        
-       
+
+
 
 
         //header first row
-
-
         let string3 = document.createTextNode("Escola")//text1
         let string4 = document.createTextNode("local")// text2
 
@@ -57,9 +63,74 @@
         table.appendChild(tableRow1)
         //add the second row to the table
         table.appendChild(tableRow2)
+
+        body.appendChild(table) */
+
+
+
+
+        //B
+        let table2 = document.createElement("table")
+        table2.innerHTML = `<table><tr><th>Escola</th><th>Local</th></tr><tr><td>Esmad</td><td>Vila do conde</td></tr></table>`;
+
+        body.appendChild(table2);
+
+
+
+
+        //C 
+
+        let save = table2.innerHTML;
         
-        body.appendChild(table)
+        let newtable = `${save} <tr ><td>ISEP</td><td>Porto</td></tr>`
+
+        table2.innerHTML=newtable;
+
+
+        //d 
+
+        let td= document.querySelectorAll("td");
        
+
+        for (let node of td ){
+            console.log(node.innerHTML)
+
+
+            if(node.innerHTML==="Esmad"){
+
+                console.log(node.nextSibling.innerHTML)
+
+                node.nextSibling.innerHTML="Vila do Conde/Póvoa de Varzim"
+            }
+        }
+
+        //e
+
+        let hd = document.querySelectorAll("th")
+
+        let tr= document.querySelector("tr")
+
+        for(let node of hd ){
+            tr.removeChild(node)
+        }
+
+      
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
