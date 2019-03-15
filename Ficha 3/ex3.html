@@ -23,7 +23,7 @@
         let body = document.querySelector("body")//
         //A
 
-       /*  let table = document.createElement("table");//table
+        let table = document.createElement("table");//table
         let tableRow1 = document.createElement("tr");// table row 1
         let tableRow2 = document.createElement("tr") //second table row
         let tableHeader1 = document.createElement("th")// table header 1
@@ -64,21 +64,23 @@
         //add the second row to the table
         table.appendChild(tableRow2)
 
-        body.appendChild(table) */
+        body.appendChild(table) 
 
 
 
 
         //B
-        let table2 = document.createElement("table")
-        table2.innerHTML = `<tr><th>Escola</th><th>Local</th></tr><tr><td>Esmad</td><td>Vila do conde</td></tr>`;
+        document.body.innerHTML += `<table id ="table2"><tr><th>Escola</th><th>Local</th></tr><tr><td>Esmad</td><td>Vila do conde</td></tr></table>`;
 
-        body.appendChild(table2);
-
+        
 
 
 
-        //C 
+
+        //C
+
+
+        let table2 = document.getElementById("table2") 
 
         let save = table2.innerHTML;
         
@@ -89,34 +91,30 @@
 
         //d 
 
-        let td= document.querySelectorAll("td");
-       
 
-        for (let node of td ){
+
+       let table2change= document.querySelector("#table2").querySelectorAll("td");
+        for (let node of table2change ){
             console.log(node.innerHTML)
 
 
             if(node.innerHTML==="Esmad"){
-
                 console.log(node.nextSibling.innerHTML)
-
                 node.nextSibling.innerHTML="Vila do Conde/Póvoa de Varzim"
             }
         }
 
+        
+
         //e
 
-        let hd = document.querySelectorAll("th")
+        let hd= document.querySelector("#table2").querySelectorAll("th");
 
-        let tr= document.querySelector("tr")
-
-        for(let node of hd ){
+        let tr= document.querySelector("tr:first-of-type")
             tr.removeChild(node)
-        }
 
       
 
-     
 
 
 

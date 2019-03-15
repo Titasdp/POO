@@ -23,7 +23,7 @@
 
     <script>
 
-        //a
+        //b
         let p2 = document.getElementById("p2");
         console.log(p2);
 
@@ -31,6 +31,7 @@
         //c
         let allParagrafe = document.querySelectorAll("p")
         console.log(allParagrafe)
+        for(let node of allParagrafe){console.log(node)}
 
         //d 
         for (let node of allParagrafe) { console.log(node.innerHTML) }
@@ -52,7 +53,7 @@
         for (let node of spam) { console.log(node.innerHTML) }
 
         //i
-        let spamInsideDiv = document.querySelector("div>span")
+        let spamInsideDiv = document.querySelector("div span")
         console.log(spamInsideDiv);
 
         //j

@@ -10,32 +10,54 @@
 
 <body>
     <button id="fst" type="button">Click Me!</button> <!-- addevendlistener -->
-    <button id="sec" click="myFunction" type="button">Click Me!</button><!-- HTML ATRIBUTE -->
-    <button id="rd" type="button">Click Me!</button><!-- DOM PROPRIETY -->
+   <!--  <button id="sec" onclick="myFunction()" type="button">Click Me!</button> HTML ATRIBUTE -->
+   <!--  <button id="rd" type="button">Click Me!</button> DOM PROPRIETY --> 
+
+
+    <input type="text" id = "myTextBox">
+    <p id ="p"></p>
 
 
 
 
     <script>
-        //addEventlistener
+      /*   //addEventlistener
         document.querySelector("#fst").addEventListener("click", myFunction)
-       
-       
-       
-       
-       
-       
+
+
+
+
+
+
         function myFunction() {
-            alert("Hello")
+            alert("OLA mundo")
         }
 
 
+        rd = document.querySelector("#rd")
 
-
-       //DOM propriety
-        rd.click = function () {
-            alert("Hello")
+        //DOM propriety
+        rd.onclick = function () {
+            alert("Ola mundo")
         }
+ */
+
+        const myTextBox= document.querySelector("#myTextBox")
+        const p = document.querySelector("p")
+
+        myTextBox.addEventListener("input", function(){
+            p.innerHTML=myTextBox.value;
+        })
+        
+       const button= document.querySelector("#fst")
+       button.addEventListener("click", function(){
+           alert(p.length)
+
+
+
+
+       })
+
 
 
 
