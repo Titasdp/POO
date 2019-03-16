@@ -70,7 +70,7 @@
 
 
         //B
-        document.body.innerHTML += `<table id ="table2"><tr><th>Escola</th><th>Local</th></tr><tr><td>Esmad</td><td>Vila do conde</td></tr></table>`;
+        document.body.innerHTML += `<table id='table2'><tr><th>Escola</th><th>Local</th></tr><tr><td>Esmad</td><td>Vila do conde</td></tr></table>`;
 
         
 
@@ -108,10 +108,30 @@
 
         //e
 
-        let hd= document.querySelector("#table2").querySelectorAll("th");
+     
+       let tb= document.querySelector("#table2").querySelector("tbody");
+       console.log(tb.innerHTML)
 
-        let tr= document.querySelector("tr:first-of-type")
-            tr.removeChild(node)
+        let tr= document.querySelector("#table2").querySelector("tr")
+        console.log(tr.innerHTML)
+       
+         
+            tb.removeChild(tr)
+
+            
+
+
+
+
+
+        
+
+
+         
+
+
+
+
 
       
 
