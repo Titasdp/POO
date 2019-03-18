@@ -11,37 +11,146 @@
 <body>
 
     <form action="">
-        <label for="txtGameName">Nome do jogo</label>
-        <input id="txtGameNear" type="text">
+        <label for="txtGameName">Nome do jogo:</label>
+        <input id="txtGameName" type="text" required>
         <br>
 
-        <label for="txtGameYear">Ano do Jogo</label>
-        <input id="txtGameYear" type="numm">
+        <label for="txtGameYear">Ano do Jogo:</label>
+        <input id="txtGameYear" type="numm" required>
+        <br>
 
 
-
+        <label for="txtGameGener">Genero:</label>
         <select name="" id="txtGameGener">
             <option value="Ação">Ação</option>
             <option value="Aventura">Aventura</option>
-            <option value="Desporto">Desporto</option>
+            <option value="Desporto" selected>Desporto</option>
             <option value="Estrategia">Estrategia</option>
             <option value="Simualção">Simualção</option>
         </select>
 
         <br>
 
-        <label for="url">Capa de jogo</label>
+        <label for="url">Capa de jogo:</label>
         <input id="url" type="url">
+        <br>
 
 
 
-        <input type="text">
+        <input id="submit" type="submit" value="Adicicionar">
+        <input id="clean" type="button" value="Limpar">
+        <br>
+        <br>
+
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Ano</th>
+                <th>Género</th>
+                <th>Capa</th>
+                <th>Opção</th>
+            </tr>
+
+        </table>
 
 
 
 
 
     </form>
+
+
+
+    <script>
+
+
+
+        const form = document.querySelector("form");
+        form.addEventListener("submit", confirmData)
+
+
+
+
+
+
+
+        function confirmData(event) {
+
+
+
+
+            let inserthData = document.getElementById("txtGameYear").value;
+            console.log(inserthData);
+
+
+            const year = new Date().getFullYear();
+            if (inserthData <= year && inserthData > 1950) {
+                alert("Validação OK");
+                event.preventDefault();
+
+
+
+                let table = document.querySelector("table");
+
+                let nome = document.getElementById("txtGameName").value;
+                let year = inserthData;
+                let gener = document.getElementById("txtGameGener").value;
+                let img = document.getElementById("url").value;
+                console.log(`${nome}+${year}${gener}${img}`)
+
+
+
+                let imgNode = document.createElement("img")
+                imgNode.src = img
+                let intro = imgNode
+                console.log(intro)
+
+
+
+
+
+
+                table.innerHTML += `<tr><td>${nome}</td><td>${year}</td><td>${gener}</td><td id='${nome}'></td><td><button id="delete">X</button></td></tr>`
+
+                let x = document.querySelector('#' + nome + '')
+                x.appendChild(imgNode)
+
+
+                x.id = null;
+                console.log(x);
+
+                form.reset();
+                let del = document.querySelector('#delete')
+                dle.addEventListener("click", {
+
+
+
+
+
+
+
+
+
+                })
+
+
+
+            } else {
+                alert("Erro")
+                event.preventDefault();
+            }
+
+
+         
+        }
+
+
+
+
+
+
+    </script>
 
 </body>
 

@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 
-<body>
+<body onload="runScript()">
     <button id="fst" type="button">Click Me!</button> <!-- addevendlistener -->
    <!--  <button id="sec" onclick="myFunction()" type="button">Click Me!</button> HTML ATRIBUTE -->
    <!--  <button id="rd" type="button">Click Me!</button> DOM PROPRIETY --> 
@@ -16,11 +16,15 @@
 
     <input type="text" id = "myTextBox">
     <p id ="p"></p>
-
-
-
-
     <script>
+
+        function runScript(){
+
+
+
+
+
+
       /*   //addEventlistener
         document.querySelector("#fst").addEventListener("click", myFunction)
 
@@ -51,18 +55,17 @@
         
        const button= document.querySelector("#fst")
        button.addEventListener("click", function(){
-           alert(p.length)
+           alert(p.innerHTML.length)       })
+           button.addEventListener("mouseup",function(){
+               console.log("obrigado pelo clique no botão!")
+
+
+               
 
 
 
-
-       })
-
-
-
-
-
-
+           })
+        }
     </script>
 </body>
 
