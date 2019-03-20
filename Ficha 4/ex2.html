@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //a
+        const student = {
+            name: "David Silva",
+            course: "POO",
+            grade: 12
+        }
+
+        //b
+        getObjProp();
+
+        removeGrade();
+
+
+        function getObjProp() {
+            for (const prop in student) {
+
+                console.log(prop);
+
+            }
+        }
+        //c
+        function removeGrade() {
+            delete student.grade;
+        }
+        //d 
+        function calculObject() {
+            let cont=0;
+
+            for (const prop in student) {
+
+                cont ++;
+            }
+
+
+            console.log(cont);
+        }
+
+    calculObject();
+
+
+
+
+    </script>
+
+</body>
+
+</html>
