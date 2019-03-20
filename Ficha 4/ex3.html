@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        const grades = [
+            {
+                name: 'Rui',
+                grade: 8
+            },
+            {
+                name: 'Ana',
+                grade: 12
+            },
+            {
+                name: 'Carla',
+                grade: 14
+            }
+        ]
+
+
+
+
+
+        calcGrade ()
+        createGrade();
+
+
+
+        function createGrade() {
+
+            const name = prompt("nome?")
+            const grade = +prompt("Nota?")
+
+            const newObj = {
+                name : name,
+                grade: grade
+            }
+            grades.push(newObj)
+            console.table(grades);
+        }
+
+
+        function calcGrade (){
+
+
+
+         let cont =0;
+         let result=0;
+
+
+
+            for (let student of grades){
+                result+= student.grade;
+                
+
+            }
+            console.log(cont)
+            console.log(grades.length)
+            console.log(result/grades.length)
+
+
+
+
+
+
+
+        }
+       
+    </script>
+
+</body>
+
+</html>
