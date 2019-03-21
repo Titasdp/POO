@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "The nigro"
+        }
+
+
+        multiplyNumeric(menu)
+
+
+        function multiplyNumeric(menu) {
+            for (let prop in menu) {
+
+
+
+                let result = typeof menu[prop]
+
+
+
+                if (result === "number") {
+                    menu[prop] = menu[prop] * 2
+                }
+            }
+            for (let prop in menu) {
+
+             console.log(menu[prop])
+            }
+        }
+    </script>
+</body>
+
+</html>

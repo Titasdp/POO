@@ -32,8 +32,12 @@
 
 
 
-        calcGrade ()
+        calcGradeAverage()
         createGrade();
+        getPositiveGrade();
+
+
+
 
 
 
@@ -43,7 +47,7 @@
             const grade = +prompt("Nota?")
 
             const newObj = {
-                name : name,
+                name: name,
                 grade: grade
             }
             grades.push(newObj)
@@ -51,32 +55,44 @@
         }
 
 
-        function calcGrade (){
+        function calcGradeAverage() {
 
 
 
-         let cont =0;
-         let result=0;
+            let cont = 0;
+            let result = 0;
 
 
 
-            for (let student of grades){
-                result+= student.grade;
-                
-
+            for (let student of grades) {
+                result += student.grade;
             }
             console.log(cont)
             console.log(grades.length)
-            console.log(result/grades.length)
-
-
-
-
-
-
-
+            console.log(result / grades.length)
         }
-       
+
+
+        function getPositiveGrade() {
+
+            let positive = []
+
+
+            for (let student of grades) {
+
+                if (student.grade >= 10) {
+                    positive.push(student.name)
+                }
+            }
+
+
+
+
+            for (let i = 0; i < positive.length; i++) {
+                console.log(positive[i])
+            }
+        }
+
     </script>
 
 </body>
