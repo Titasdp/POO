@@ -11,7 +11,7 @@ form.addEventListener("submit", function (event) {
     const name = document.querySelector("#movieTitle").value;
     const gener = document.querySelector("#gener").value;
     const date = document.querySelector("#date").value;
-    const cover = document.querySelector("#capa").value;
+    const cover = document.querySelector("#cover").value;
     const trailer = document.querySelector("#trailer").value;
     //1.Verificar a existencia do file no array
 
@@ -31,6 +31,8 @@ form.addEventListener("submit", function (event) {
         //2.2Inserir o objeto movie num array
         movies.push(movie)
         console.table(movies)
+
+        renderTable() 
 
         
 
@@ -56,7 +58,6 @@ function AddIfPossible(a) {
 
         if (movie.name.toLowerCase() === a.toLowerCase()) {
             return false;
-
         }
 
 
@@ -66,7 +67,7 @@ function AddIfPossible(a) {
 }
 
 
-function renderrTable() {
+function renderTable() {
 
     const table = document.querySelector("table")
 
@@ -83,10 +84,24 @@ function renderrTable() {
     </th></tr>`
 
     for (let movie of movies) {
-        table.innerHTML += `<tr><td>${movie.name}</td><td>${movie.gener}</td><td><button</td>`
-
-
+        table.innerHTML += `<tr id="${movie.name}"><td>${movie.name}</td><td>${movie.gener}</td><td><button onclick="seeCover(${movie.cover})" >VER CAPA</button><button>VER TRAILER</button><button class="${movie.name}">REMOVER</button></td></tr>`
     }
+    console.log(table)
+}
+
+function seeCover(cover){
+    
+
+
+    let dialog= document.querySelector("#dlgcover")
+
+
+   let img= dialog.querySelector("img")
+
+   img.src=cover
+
+   document.querySelector("#dlgcover").showModal();
+
 
 
 
