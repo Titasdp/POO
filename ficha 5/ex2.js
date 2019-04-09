@@ -1,36 +1,93 @@
+//definir class car 
 class Car {
-    constructor(plate,brand,color,gazTank,resourseType) {
+    //Construncter
+    constructor(brand, plate, color, fuelTank, fuelType) {
 
-
-        this.plate = plate
-        this.brand= brand
-        this.color = color
-        this.gazTank= gazTank
-        this.resouseType= resourseType
-
-    }
-
-     //Criar metodos 
-     setcolor(color){
-        return this.color=color;
+        this.brand = brand;
+        this.plate = plate;
+        this.color = color;
+        this.fuelTank = Number(fuelTank);
+        this.fuelType = fuelType;
     }
 
 
-    setgazTank(liters){
-        this.gazTank+=liters
+    //functions
+    //Actualiza cor do carro
+    carColor(color) {
+        this.color = color;
     }
 
+    //abastecimento do deposito
+    AddFuel(fuel) {
+        return this.fuelTank += fuel
 
-    setgazTank(kms){
-        const liters= kms*5/100
-        this.gazTank= liters  
+    }
 
-
+    //perda de combustivel por kilometros percorridos
+    fuelLost(klm) {
+        this.fuelTank -= (5 * klm) / 100
     }
 }
 
 
 
-let firstCar =  new Car("Ford","91-GH-15","verde","40","Gasóleo");
-let firstCar =  new Car("Opel","23-AB-23","branco","50","Gasolina");
-let firstCar =  new Car("Nissan","12-CX-45","preto","22","Gasóleo");
+//criacao de objetos com nomes de carross
+let firstCar = new Car("Ford", "91-GH-15", "verde", "40", "Gasóleo");
+let secondCar = new Car("Opel", "23-AB-23", "branco", "50", "Gasolina");
+let thirdCar = new Car("Nissan", "12-CX-45", "preto", "22", "Gasóleo");
+
+//array de armazenamento de carros 
+let cars = []
+
+//addicionar os carros 
+
+cars.push(firstCar)
+cars.push(secondCar)
+cars.push(thirdCar)
+
+
+
+getByBrand("Opel")
+getTotalFull("Gasóleo")
+
+
+
+
+//functions addicionais que iteram sobre o array 
+
+
+//number with that brand
+function getByBrand(brand) {
+
+    //variavel contadora que aumenta para saber a quantidade de carros com essa carracteristica
+    let cont = 0;
+    for (let car of cars) {
+        if (car.brand == brand) {
+            cont++;
+        }
+
+    }
+    alert(cont)
+}
+
+//numero total de litros de combustivel existentes
+function getTotalFull(fueltype) {
+
+
+    let cont = 0;
+
+    for (let car of cars) {
+
+        if (car.fuelType === fueltype) {
+
+            cont += car.fuelTank;
+        }
+
+
+
+    }
+
+
+    alert(cont)
+
+}
